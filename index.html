@@ -3,56 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Name – Portfolio</title>
-</head>
-<body style="margin:0;font-family:sans-serif;color:#333;line-height:1.6;">
-
-  <!-- Hero Section -->
-  <section style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f9f9f9;text-align:center;padding:2rem;">
-    <div style="max-width:800px;">
-      <h1 style="font-size:2.5rem;margin-bottom:1rem;opacity:0;animation:fadeIn 1s ease-in-out forwards;">Hi, I’m Your Name</h1>
-      <p style="font-size:1.2rem;opacity:0;animation:fadeIn 1s ease-in-out 0.5s forwards;">
-        I’m a [Your Role]. I build modern, responsive, and clean web experiences.
-      </p>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section style="padding:3rem 1rem;">
-    <h2 style="text-align:center;font-size:2rem;margin-bottom:2rem;">Projects</h2>
-    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
-      <div style="background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1);flex:1 1 calc(45% - 1rem);min-width:250px;transition:transform 0.3s;cursor:pointer;"
-           onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-        <h3 style="margin-top:0;">Project One</h3>
-        <p>Short description of project one.</p>
-      </div>
-      <div style="background:#fff;padding:1rem;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1);flex:1 1 calc(45% - 1rem);min-width:250px;transition:transform 0.3s;cursor:pointer;"
-           onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-        <h3 style="margin-top:0;">Project Two</h3>
-        <p>Short description of project two.</p>
-      </div>
-      <!-- Add more project cards as desired -->
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section style="background:#f9f9f9;padding:3rem 1rem;text-align:center;">
-    <h2 style="font-size:2rem;margin-bottom:1rem;">Get in Touch</h2>
-    <p style="margin-bottom:2rem;">Feel free to <a href="mailto:you@example.com" style="color:#007acc;text-decoration:none;transition:color 0.3s;"
-      onmouseover="this.style.color='#005fa3'" onmouseout="this.style.color='#007acc'">email me</a>.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background:#222;color:#aaa;text-align:center;padding:1rem 0;">
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
-
-  <!-- Animations -->
+  <title> MAS • Dark Portfolio</title>
   <style>
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    /* Reset */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#121212; color:#e0e0e0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; scroll-behavior:smooth; }
+    a { color:#82aaff; text-decoration:none; transition:color .3s; }
+    a:hover { color:#c792ea; }
+
+    /* Sections */
+    header, section, footer { padding:60px 20px; }
+    header { text-align:center; min-height:80vh; display:flex; flex-direction:column; justify-content:center; }
+    header h1 { font-size:3rem; margin-bottom:0.5rem; opacity:0; animation:fadeInDown .8s forwards; }
+    header p { font-size:1.25rem; opacity:0; animation:fadeInUp .8s .4s forwards; }
+
+    /* Projects Grid */
+    #projects .grid { display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); }
+    .card { background:#1e1e1e; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.5); transition:transform .3s, box-shadow .3s; cursor:pointer; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 4px 12px rgba(0,0,0,0.7); }
+
+    /* Contact Button */
+    #contact { text-align:center; }
+    #contact .button { display:inline-block; padding:10px 20px; border:2px solid #82aaff; border-radius:5px; font-weight:bold; color:#82aaff; transition:background .3s, color .3s; }
+    #contact .button:hover { background:#82aaff; color:#1e1e1e; }
+
+    /* Footer */
+    footer { background:#1e1e1e; text-align:center; font-size:.9rem; }
+
+    /* Animations */
+    @keyframes fadeInDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+
+    /* Reveal on Scroll */
+    .reveal { opacity:0; transform:translateY(20px); transition:all .6s ease-out; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
   </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mario Alexander Simic/h1>
+    <p>IT Consultant | Junior Software Engineer</p>
+  </header>
+
+  <section id="projects">
+    <h2 style="text-align:center; margin-bottom:40px;">Projects</h2>
+    <div class="grid">
+      <div class="card reveal">
+        <h3>Project One</h3>
+        <p>Concise, compelling description of your project.</p>
+      </div>
+      <div class="card reveal">
+        <h3>Project Two</h3>
+        <p>Concise, compelling description of your project.</p>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </section>
+  
+<section id="contact">
+  <h2>Get in Touch</h2>
+  <p>Let’s work together or just say hi:</p>
+  <a href="mailto:mario.jobb@gmail.com" class="button">Email Me</a>
+  
+  <div style="margin-top:20px; text-align:center;">
+    <p>Connect with me on LinkedIn:</p>
+    <a href="https://www.linkedin.com/in/mario-simic-985892339/" target="_blank" rel="noopener" style="color:#82aaff; font-weight:bold;">
+      View my LinkedIn profile
+    </a>
+  </div>
+</section>
+  
+  <footer>&copy; 2025 MAS • Crafted with a dark theme for clarity and style.</footer>
+
+  <script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const trigger = window.innerHeight / 6;
+      reveals.forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - trigger) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 
 </body>
 </html>
