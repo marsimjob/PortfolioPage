@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> MAS • Dark Portfolio</title>
+  <title>Mario Alexander Simic</title>
   <style>
-    /* Reset */
+    /* Reset and base styles */
     * { margin:0; padding:0; box-sizing:border-box; }
-    body { background:#121212; color:#e0e0e0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6; scroll-behavior:smooth; }
+    body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height:1.6;
+           color:#e0e0e0; background: linear-gradient(135deg, #1e1e1e, #2c3e50 60%, #1e1e1e); min-height:100vh;
+           scroll-behavior:smooth; }
     a { color:#82aaff; text-decoration:none; transition:color .3s; }
     a:hover { color:#c792ea; }
 
@@ -19,12 +21,14 @@
 
     /* Projects Grid */
     #projects .grid { display:grid; gap:20px; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); }
-    .card { background:#1e1e1e; padding:20px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.5); transition:transform .3s, box-shadow .3s; cursor:pointer; }
-    .card:hover { transform:translateY(-5px); box-shadow:0 4px 12px rgba(0,0,0,0.7); }
+    .card { background:#2c3e50; padding:20px; border-radius:8px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.7); transition:transform .3s, box-shadow .3s; cursor:pointer; }
+    .card:hover { transform:translateY(-5px); box-shadow:0 4px 12px rgba(0,0,0,0.9); }
 
-    /* Contact Button */
+    /* Contact */
     #contact { text-align:center; }
-    #contact .button { display:inline-block; padding:10px 20px; border:2px solid #82aaff; border-radius:5px; font-weight:bold; color:#82aaff; transition:background .3s, color .3s; }
+    #contact .button { display:inline-block; padding:10px 20px; border:2px solid #82aaff; border-radius:5px;
+                       font-weight:bold; color:#82aaff; transition:background .3s, color .3s; }
     #contact .button:hover { background:#82aaff; color:#1e1e1e; }
 
     /* Footer */
@@ -34,7 +38,7 @@
     @keyframes fadeInDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
     @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
 
-    /* Reveal on Scroll */
+    /* Reveal on scroll */
     .reveal { opacity:0; transform:translateY(20px); transition:all .6s ease-out; }
     .reveal.visible { opacity:1; transform:translateY(0); }
   </style>
@@ -42,8 +46,8 @@
 <body>
 
   <header>
-    <h1>Mario Alexander Simic/h1>
-    <p>IT Consultant | Junior Software Engineer</p>
+    <h1>Mario Alexander Simic</h1>
+    <p>IT Consultant | Junior Software Engineer.</p>
   </header>
 
   <section id="projects">
@@ -60,24 +64,22 @@
       <!-- Add more cards as needed -->
     </div>
   </section>
-  
-<section id="contact">
-  <h2>Get in Touch</h2>
-  <p>Let’s work together or just say hi:</p>
-  <a href="mailto:mario.jobb@gmail.com" class="button">Email Me</a>
-  
-  <div style="margin-top:20px; text-align:center;">
-    <p>Connect with me on LinkedIn:</p>
-    <a href="https://www.linkedin.com/in/mario-simic-985892339/" target="_blank" rel="noopener" style="color:#82aaff; font-weight:bold;">
-      View my LinkedIn profile
-    </a>
-  </div>
-</section>
-  
-  <footer>&copy; 2025 MAS • Crafted with a dark theme for clarity and style.</footer>
+
+  <section id="contact">
+    <h2>Get in Touch</h2>
+    <p>Let’s work together or just say hi:</p>
+    <a href="mailto:mario.jobb@gmail.com" class="button">Email Me</a>
+    <div style="margin-top:20px;">
+      <p>Connect on LinkedIn:</p>
+      <a href="https://www.linkedin.com/in/mario-simic-985892339/" target="_blank" rel="noopener">
+        View my profile
+      </a>
+    </div>
+  </section>
+
+  <footer>&copy; 2025 Mario Alexander Simic • Dark gradient for elegance & clarity.</footer>
 
   <script>
-    // Reveal on scroll
     const reveals = document.querySelectorAll('.reveal');
     function revealOnScroll() {
       const trigger = window.innerHeight / 6;
